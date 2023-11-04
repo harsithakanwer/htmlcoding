@@ -1,0 +1,186 @@
+
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+
+body
+{
+    background-image: url("C:/Users/HP/Downloads/Githubimage.jpeg");
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.menu-bar
+{
+    text-align: left;  
+}
+.menu-bar ul
+{
+    display: inline-flex;
+    list-style:none;
+    color: #fff;
+    
+}
+.menu-bar ul li
+{
+    width: 130px;
+    margin: 15px;
+    padding: 0;
+    padding-bottom: 15px;
+}
+.menu-bar ul li a
+{
+    text-decoration: none;
+    color: #fff;
+}
+.active, .menu-bar ul li:hover
+{
+    background:#000;
+    border-radius: 3px;
+}
+.sub-menu1
+{
+    display: none;
+}   
+.menu-bar ul li:hover .sub-menu1
+{
+    display: block;
+    position: absolute;
+    background: #000;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.menu-bar ul li:hover .sub-menu1 ul
+{
+    display: block;
+    margin: 10px;
+}
+.menu-bar ul li:hover .sub-menu1 ul li
+{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted grey;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+
+}
+.sub-menu2
+{
+    display: none;
+}   
+.menu-bar ul li:hover .sub-menu2
+{
+    display: block; 
+    position: absolute; 
+    background: #000;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.menu-bar ul li:hover .sub-menu2 ul
+{
+     display: block; 
+     margin: 10px; 
+}
+.menu-bar ul li:hover .sub-menu2 ul li
+{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted grey;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+
+}
+.sub-menu3
+{
+    display: none;
+}   
+.menu-bar ul li:hover .sub-menu3
+{
+    display: block;
+    position: absolute;
+    background: #000;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.menu-bar ul li:hover .sub-menu3 ul
+{
+    display: block;
+    margin: 10px;
+}
+.menu-bar ul li:hover .sub-menu3 ul li
+{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted grey;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+
+}
+.forbuttons button
+{
+    background-color:#fff;
+    padding: 5px;
+    margin-left: 10px;
+    margin-top: 0px;
+    float: right;
+    cursor: pointer;
+}
+
+.container
+{
+    border-radius:40px ;
+    margin-top: 150px;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding:200px ;
+    background-color:rgba(0, 0, 0, 0.5);
+
+}
+.margin
+{
+    text-align: right;  
+}
+.margin ul
+{
+    display: inline-flex;
+    list-style:none;
+    color: #fff;
+}
+.margin ul li
+{
+    width: 130px;
+    margin-left: 15px;
+    margin-top: 5px;
+    padding: 0;
+}
+div h1
+{
+    font-size: 75px;
+    color: #fff;
+    text-align:left;
+}
+div p
+{
+    font-size: 30px;
+    color:rgb(169,169,169);
+    text-align: left;
+}
+::placeholder
+{
+  color:#000;
+}
+input[type=text]{
+    padding: 12px;
+    border: 1px solid #efc9af;
+    margin-top: 19px;
+    border-radius: 4px;
+    background-color: #fff;
+}
