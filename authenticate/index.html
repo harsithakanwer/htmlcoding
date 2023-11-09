@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login/Signup Page</title>
+</head>
+<body>
+  
+    
+    <button id="switch-to-login" onclick="toggleForm('login')">Switch to Login</button>
+    <button id="switch-to-signup" onclick="toggleForm('signup')" style="display: none;">Switch to Signup</button>
+    
+    <div id="login-form">
+        <h2>Login</h2>
+        <form id="login">
+            <label for="login-name">Name:</label>
+            <input type="text" id="login-name" name="name" required><br>
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" required><br>
+            <input type="button" value="Login" onclick="login()">
+        </form>
+    </div>
+
+    <div id="signup-form" style="display: none;">
+        <h2>Signup</h2>
+        <form id="signup">
+            <label for="signup-name">Name:</label>
+            <input type="text" id="signup-name" name="name" required><br>
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" name="password" required><br>
+            <input type="button" value="Signup" onclick="signup()">
+        </form>
+    </div>
+
+    <script>
+        function toggleForm(formType) {
+            if (formType === 'login') {
+                document.getElementById('login-form').style.display = 'block';
+                document.getElementById('signup-form').style.display = 'none';
+                document.getElementById('switch-to-login').style.display = 'none';
+                document.getElementById('switch-to-signup').style.display = 'block';
+            } else if (formType === 'signup') {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('signup-form').style.display = 'block';
+                document.getElementById('switch-to-login').style.display = 'block';
+                document.getElementById('switch-to-signup').style.display = 'none';
+            }
+        }
+
+        function login() {
+            var name = document.getElementById("login-name").value;
+            var password = document.getElementById("login-password").value;
+
+            
+            var data = {
+                name: name,
+                password: password
+            };
+
+
+            fetch("http://localhost:3001/login", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                location.reload();
+
+            })
+            .catch(error => {
+                alert("Error: " + error);
+            });
+        }
+
+        function signup() {
+    var name = document.getElementById("signup-name").value;
+    var password = document.getElementById("signup-password").value;
+
+    
+    var data = {
+        name: name,
+        password: password
+    };
+
+    
+    fetch("http://localhost:3001/signup", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data); 
+
+        location.reload();
+    })
+    .catch(error => {
+        alert("Error: " + error);
+    });
+}
+
+    </script>
+</body>
+</html>
